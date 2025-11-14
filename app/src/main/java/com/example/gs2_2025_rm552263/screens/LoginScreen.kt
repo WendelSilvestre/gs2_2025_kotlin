@@ -29,8 +29,8 @@ import androidx.navigation.NavController
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
 
-    var usuario = remember { mutableStateOf("") }
-    var senha = remember { mutableStateOf("") }
+    val usuario = remember { mutableStateOf("") }
+    val senha = remember { mutableStateOf("") }
 
     Box(
         modifier = modifier
@@ -50,7 +50,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier.padding(bottom = 8.dp),
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Normal,
-                color = Color.Red
+                color = Color.White
             )
             OutlinedTextField(
                 value = usuario.value,
@@ -60,8 +60,8 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                     Text(text = "Insira seu usuário.")
                 },
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedBorderColor = Color.Red,
-                    focusedBorderColor = Color.Red
+                    unfocusedBorderColor = Color.White,
+                    focusedBorderColor = Color.White
                 ),
                 shape = RoundedCornerShape(16.dp),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
@@ -72,7 +72,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier.padding(bottom = 8.dp),
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Normal,
-                color = Color.Red
+                color = Color.White
             )
             OutlinedTextField(
                 value = senha.value,
@@ -84,8 +84,8 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                     )
                 },
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedBorderColor = Color.Red,
-                    focusedBorderColor = Color.Red
+                    unfocusedBorderColor = Color.White,
+                    focusedBorderColor = Color.White
                 ),
                 shape = RoundedCornerShape(16.dp),
                 keyboardOptions = KeyboardOptions(

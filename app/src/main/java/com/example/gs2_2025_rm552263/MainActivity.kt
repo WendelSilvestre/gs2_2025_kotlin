@@ -1,3 +1,9 @@
+package com.example.gs2_2025_rm552263
+
+import CalculoImcScreen
+import EquipeScreen
+import LoginScreen
+import MenuScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,10 +38,10 @@ class MainActivity : ComponentActivity() {
                             MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "calculo/imc") {
-                            IMCScreen(modifier = Modifier.padding(innerPadding), navController)
+                            CalculoImcScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "equipe") {
-                            EquipeScreen(modifier = Modifier.padding(innerPadding), navController)
+                            EquipeScreen( modifier = Modifier.padding(innerPadding), navController)
                         }
                     }
                 }

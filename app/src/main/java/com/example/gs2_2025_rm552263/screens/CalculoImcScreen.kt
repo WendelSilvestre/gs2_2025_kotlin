@@ -1,4 +1,3 @@
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,12 +32,12 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
+fun CalculoImcScreen(modifier: Modifier = Modifier, navController: NavController) {
 
-    var peso = remember { mutableStateOf("") }
-    var altura = remember { mutableStateOf("") }
-    var imc = remember { mutableStateOf(0.0) }
-    var statusImc = remember { mutableStateOf("") }
+    val peso = remember { mutableStateOf("") }
+    val altura = remember { mutableStateOf("") }
+    val imc = remember { mutableStateOf(0.0) }
+    val statusImc = remember { mutableStateOf("") }
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -53,7 +52,7 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(180.dp)
-                    .background(Color.Red)
+                    .background(Color(0xFF2C4EC7))
             ) {
 
                 Text(
@@ -86,7 +85,7 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                             modifier = Modifier.fillMaxWidth(),
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
-                            color = Color.Red,
+                            color = Color(0xFF2C4EC7),
                             textAlign = TextAlign.Center
                         )
                         Spacer(modifier = Modifier.height(32.dp))
@@ -95,7 +94,7 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                             modifier = Modifier.padding(bottom = 8.dp),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Normal,
-                            color = Color.Red
+                            color = Color(0xFF2C4EC7)
                         )
                         OutlinedTextField(
                             value = peso.value,
@@ -105,8 +104,8 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                                 Text(text = "Seu peso em Kg.")
                             },
                             colors = OutlinedTextFieldDefaults.colors(
-                                unfocusedBorderColor = Color.Red,
-                                focusedBorderColor = Color.Red
+                                unfocusedBorderColor = Color.Black,
+                                focusedBorderColor = Color.Black
                             ),
                             shape = RoundedCornerShape(16.dp),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
@@ -117,7 +116,7 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                             modifier = Modifier.padding(bottom = 8.dp),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Normal,
-                            color = Color.Red
+                            color = Color(0xFF2C4EC7)
                         )
                         OutlinedTextField(
                             value = altura.value,
@@ -129,8 +128,8 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                                 )
                             },
                             colors = OutlinedTextFieldDefaults.colors(
-                                unfocusedBorderColor = Color.Red,
-                                focusedBorderColor = Color.Red
+                                unfocusedBorderColor = Color.Black,
+                                focusedBorderColor = Color.Black
                             ),
                             shape = RoundedCornerShape(16.dp),
                             keyboardOptions = KeyboardOptions(
@@ -153,24 +152,33 @@ fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
                             shape = RoundedCornerShape(16.dp),
                             colors = ButtonDefaults.buttonColors(
                                 containerColor =
-                                    Color.Red
+                                    Color(0xFF2C4EC7)
                             )
                         ) {
                             Text(
-                                text = "CALCULAR",
+                                text = "Calcular",
                                 fontWeight = FontWeight.Bold,
                                 color = Color.White,
                                 fontSize = 14.sp
                             )
                         }
+                        Spacer(modifier = Modifier.height(16.dp))
                         Button(
                             onClick = { navController.navigate("menu") },
-                            colors = ButtonDefaults.buttonColors(Color.White),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(48.dp),
+                            shape = RoundedCornerShape(16.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor =
+                                    Color(0xFF2C4EC7)
+                            )
                         ) {
                             Text(
                                 text = "Voltar",
-                                fontSize = 20.sp,
-                                color = Color.Blue
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White,
+                                fontSize = 14.sp
                             )
                         }
                     }
