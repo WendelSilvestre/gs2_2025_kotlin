@@ -24,16 +24,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 
 @Composable
-fun IMCScreen(modifier: Modifier = Modifier) {
+fun IMCScreen(modifier: Modifier = Modifier, navController: NavController) {
 
     var peso = remember { mutableStateOf("") }
     var altura = remember { mutableStateOf("") }
@@ -161,6 +161,16 @@ fun IMCScreen(modifier: Modifier = Modifier) {
                                 fontWeight = FontWeight.Bold,
                                 color = Color.White,
                                 fontSize = 14.sp
+                            )
+                        }
+                        Button(
+                            onClick = { navController.navigate("menu") },
+                            colors = ButtonDefaults.buttonColors(Color.White),
+                        ) {
+                            Text(
+                                text = "Voltar",
+                                fontSize = 20.sp,
+                                color = Color.Blue
                             )
                         }
                     }

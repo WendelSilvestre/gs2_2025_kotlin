@@ -48,19 +48,19 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
                 Text(
-                    text = "Equipe",
+                    text = "Calculo IMC",
                     fontSize = 20.sp,
                     color = Color.Blue
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("login") },
+                onClick = { navController.navigate("equipe") },
                 colors = ButtonDefaults.buttonColors(Color.White),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
                 Text(
-                    text = "Voltar",
+                    text = "Equipe",
                     fontSize = 20.sp,
                     color = Color.Blue
                 )

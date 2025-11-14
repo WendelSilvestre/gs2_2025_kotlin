@@ -6,11 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import com.example.gs2_2025_rm552263.ui.theme.Android5navigationbetweenscreensTheme
 
 
@@ -32,6 +30,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = "menu") {
                             MenuScreen(modifier = Modifier.padding(innerPadding), navController)
+                        }
+                        composable(route = "calculo/imc") {
+                            IMCScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "equipe") {
                             EquipeScreen(modifier = Modifier.padding(innerPadding), navController)
